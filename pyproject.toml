@@ -1,0 +1,8 @@
+[project]
+name = "data-assessment-env"
+version = "0.1.0"
+description = "OpenEnv customer support triage environment"
+requires-python = ">=3.8"
+
+[tool.setuptools]
+packages = ["app"]
