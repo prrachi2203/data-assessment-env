@@ -1,8 +1,17 @@
 [project]
 name = "data-assessment-env"
 version = "0.1.0"
-description = "OpenEnv customer support triage environment"
+description = "OpenEnv environment"
 requires-python = ">=3.8"
 
-[tool.setuptools]
-packages = ["app"]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "requests",
+    "python-dotenv",
+    "openenv-core>=0.2.0"
+]
+
+[project.scripts]
+server = "main:app"
