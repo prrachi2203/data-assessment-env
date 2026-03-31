@@ -92,3 +92,7 @@ def proxy_chat_completions(request_data: Dict[str, Any] = Body(...)):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=7860)
+
+def main():
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=7860)
