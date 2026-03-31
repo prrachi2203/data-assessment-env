@@ -1,0 +1,17 @@
+name: support-env
+description: A customer support ticket triage environment for testing agent reasoning and politeness.
+version: 1.0.0
+entrypoint: main:app
+observation_model: app.models.Observation
+action_model: app.models.Action
+reward_model: app.models.Reward
+tasks:
+  - id: easy
+    name: Password Reset
+    difficulty: EASY
+  - id: medium
+    name: Duplicate Billing
+    difficulty: MEDIUM
+  - id: hard
+    name: API Error Escalation
+    difficulty: HARD

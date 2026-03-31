@@ -1,0 +1,5 @@
+{
+  "name": "Support Triage Env",
+  "description": "An OpenEnv-compliant environment for customer support ticket triage simulation.",
+  "requestFramePermissions": []
+}
