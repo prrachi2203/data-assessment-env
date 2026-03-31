@@ -5,12 +5,10 @@ from .tasks import TASKS
 from .graders import grade_step
 
 class SupportEnv:
-    def __init__(self):
-        self.tasks = TASKS
-        self.current_task_index = 0
-        self.max_steps = 5
-        self.current_step = 0
-        self.state_data = None
+    def __init__(self, task_name="easy"):
+    self.task_name = task_name
+    self.state_data = None
+    self.done = False
 
     def reset(self, task_id: str = None) -> Observation:
         if task_id:
