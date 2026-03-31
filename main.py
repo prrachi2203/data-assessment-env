@@ -1,4 +1,3 @@
-
 import os
 import requests
 from typing import Dict, Any
@@ -13,15 +12,21 @@ env = None
 
 @app.post("/reset")
 def reset(body: Dict[str, Any] = Body(default={})):
+    """
+    MUST:
+    - accept empty body {}
+    - return JSON
+    """
     global env
 
     try:
         task_id = body.get("task_id", "easy")
 
         env = SupportEnv(task_id)
-        observation = env.reset()
+        obs = env.reset()
 
-        return observation.dict() if hasattr(observation, "dict") else observation
+        # convert pydantic → dict
+        return obs.dict() if hasattr(obs, "dict") else obs
 
     except Exception as e:
         return {"error": str(e)}
@@ -60,6 +65,9 @@ def get_state():
 
 @app.post("/chat/completions")
 def proxy_chat_completions(request_data: Dict[str, Any] = Body(...)):
+    """
+    Required for inference compatibility
+    """
     api_key = os.getenv("OPENAI_API_KEY") or os.getenv("HF_TOKEN")
 
     if not api_key:
