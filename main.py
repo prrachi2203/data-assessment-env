@@ -22,7 +22,9 @@ def reset(body: Dict[str, Any] = Body(default={})):
     try:
         task_id = body.get("task_id", "easy")
 
-        env = SupportEnv(task_id)
+        env = SupportEnv()
+        env.task_name = task_id
+
         obs = env.reset()
 
         # convert pydantic → dict
