@@ -6,8 +6,7 @@ colorTo: green
 sdk: docker
 app_port: 7860
 pinned: false
----# OpenEnv Customer Support Triage Environment
-
+---
 This project implements an OpenEnv-compliant environment for simulating a Customer Support Ticket Triage System.
 
 ## Environment Description
